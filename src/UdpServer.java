@@ -14,12 +14,13 @@ public class UdpServer {
             String received;
             String local_ip;
             DatagramSocket serverSocket = new DatagramSocket(port);
-            byte[] receiveData = new byte[256];
+            byte[] receiveData;
             byte[] sendData;
 
             System.out.println(getClass().getName()+" ==> My name is "+InetAddress.getLocalHost().getHostName());
 
             while (true) {
+                receiveData = new byte[256];
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 serverSocket.receive(receivePacket);
 
