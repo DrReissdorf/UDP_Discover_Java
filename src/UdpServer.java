@@ -20,7 +20,7 @@ public class UdpServer {
             System.out.println(getClass().getName()+" ==> My name is "+InetAddress.getLocalHost().getHostName());
 
             while (true) {
-                receiveData = new byte[256];
+                receiveData = new byte[1024];
                 DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
                 serverSocket.receive(receivePacket);
 
